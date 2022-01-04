@@ -17,8 +17,11 @@ float c1, s1, c2, s2, s21, c11, s11, x, y;
 float pulse1, pulse2;
 float l2 = 235, l3 = 200;
 
-int a[5] = {40, 40, 10, 10}; // a là x
-int b[5] = {170, 185, 185, 170}; // b là y
+int a[5] = {10, 60, 10, 10}; // a là x
+int b[5] = {185, 110, 185, 170}; // b là y
+
+//int a[5] = {40, 40, 10, 10}; // a là x
+//int b[5] = {170, 185, 185, 170}; // b là y
 int k, val = 50;
 double bu;
 
