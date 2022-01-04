@@ -66,7 +66,8 @@ void loop() {
     default:
       {
 
-        //Tính q1- Góc của động cơ 1
+
+        //Tính q1- Góc của động cơ 1 từ tọa độ
         double q1;
         q1 = atan2(y, x) + acos((-1 * pow(l2f, 2) + pow(l1f, 2) + pow(x, 2) + pow(y, 2)) / (2 * l1f * sqrt(pow(x, 2) + pow(y, 2)))); // radian
         angle_1 = q1 * (360 / (2 * PI));
