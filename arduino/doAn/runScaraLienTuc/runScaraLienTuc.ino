@@ -17,8 +17,8 @@ float c1, s1, c2, s2, s21, c11, s11, x, y;
 float pulse1, pulse2;
 float l2 = 235, l3 = 200;
 
-int a[5] = {10, 60, 10, 10}; // a là x
-int b[5] = {185, 110, 185, 170}; // b là y
+int a[5] = {60, 10, 60, 10}; // a là x
+int b[5] = {110, 185, 110, 185}; // b là y
 double gocStep1[10] = {0, 0, 0, 0};
 double gocStep2[10] = {0, 0, 0, 0};
 
@@ -85,46 +85,10 @@ void loop() {
     /******************************************************************************************************************************************************/
     chay(gocStep1[0], gocStep2[0]) ;
 
-    chayN(1);
-//    /************************************************************** Goc cua toa do N *****************************************************************/
-//    Serial.print("Toa do N la x: ");
-//    Serial.println(a[1]);
-//    Serial.print("Toa do N la y: ");
-//    Serial.println(b[1]);
-//
-//    //Tính q1- Góc của động cơ 1
-//    double gocRand1, gocDoN_1;
-//    gocRand1 = atan2(b[1], a[1]) + acos((-1 * pow(l2f, 2) + pow(l1f, 2) + pow(a[1], 2) + pow(b[1], 2)) / (2 * l1f * sqrt(pow(a[1], 2) + pow(b[1], 2)))); // radian
-//    gocDoN_1 = gocRand1 * (360 / (2 * PI));
-//    gocStep1[1] = gocDoN_1;
-//    Serial.print("Góc của động cơ 1: ");
-//    Serial.println(gocStep1[1]);
-//
-//    //Tính q2 - Góc của động cơ 2
-//    dif_dx = (d - a[1]);
-//    double gocRand2, gocDoN_2;
-//    gocRand1 = PI - atan2(b[1], dif_dx) - acos((-1 * pow(l2r, 2) + pow(l1r, 2) + pow(dif_dx, 2) + pow(b[1], 2)) / (2 * l1r * sqrt(pow(dif_dx, 2) + pow(b[1], 2))));
-//    gocDoN_2 = gocRand1 * (360 / (2 * PI));
-//    gocStep2[1] = gocDoN_2;
-//    Serial.print("Góc của động cơ 2: ");
-//    Serial.println(gocStep2[1]);
-//    /******************************************************************************************************************************************************/
-//    /************************************************************** Toa do ANPHA 3 *****************************************************************/
-//    double gocAnpha3_1, gocAnpha3_2, gocDoN_1_1, gocDoN_1_2;
-//    gocDoN_1_1 = gocStep1[0];
-//    gocDoN_1_2 = gocStep2[0];
-//    gocAnpha3_1 = gocDoN_1 - gocDoN_1_1;
-//    gocAnpha3_2 = gocDoN_2 - gocDoN_1_2;
-//
-//    Serial.print("Góc anpha của động cơ 1: ");
-//    Serial.println(gocAnpha3_1);
-//
-//    //Tính q2 - Góc của động cơ 2
-//    Serial.print("Gócanpha của động cơ 2: ");
-//    Serial.println(gocAnpha3_2);
-//    /******************************************************************************************************************************************************/
-//    chay(gocAnpha3_1, gocAnpha3_2) ;
-
+    for (int i = 1; i <= 3; i++)
+    {
+      chayN(i);
+    }
     isGoal = true;
   }
 
@@ -298,8 +262,8 @@ void chayN(int i)
   /******************************************************************************************************************************************************/
   /************************************************************** Toa do ANPHA 3 *****************************************************************/
   double gocAnpha3_1, gocAnpha3_2, gocDoN_1_1, gocDoN_1_2;
-  gocDoN_1_1 = gocStep1[i-1];
-  gocDoN_1_2 = gocStep2[i-1];
+  gocDoN_1_1 = gocStep1[i - 1];
+  gocDoN_1_2 = gocStep2[i - 1];
   gocAnpha3_1 = gocDoN_1 - gocDoN_1_1;
   gocAnpha3_2 = gocDoN_2 - gocDoN_1_2;
 
